@@ -1,6 +1,6 @@
 class PhotoLikesController < ApplicationController
   def index
-    @photo_likes = PhotoLike.all
+    @photo_likes = PhotoLike.page(params[:page]).per(10)
 
     render("photo_like_templates/index.html.erb")
   end

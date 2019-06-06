@@ -1,6 +1,6 @@
 class VenueLikesController < ApplicationController
   def index
-    @venue_likes = VenueLike.all
+    @venue_likes = VenueLike.page(params[:page]).per(10)
 
     render("venue_like_templates/index.html.erb")
   end

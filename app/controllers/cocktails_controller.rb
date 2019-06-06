@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.page(params[:page]).per(10)
 
     render("cocktail_templates/index.html.erb")
   end

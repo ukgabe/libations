@@ -1,6 +1,6 @@
 class CocktailPhotosController < ApplicationController
   def index
-    @cocktail_photos = CocktailPhoto.all
+    @cocktail_photos = CocktailPhoto.page(params[:page]).per(10)
 
     render("cocktail_photo_templates/index.html.erb")
   end
