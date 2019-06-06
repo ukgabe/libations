@@ -61,7 +61,7 @@
     </label>
 
     <!-- Input for cocktail_id start -->
-    <input type="text" id="cocktail_id" name="cocktail_id" class="form-control" value="<%= @cocktail_photo.cocktail_id %>">
+    <%= select_tag(:cocktail_id, options_from_collection_for_select(Cocktail.all, :id, :name, @cocktail_photo.cocktail_id), :class => "form-control") %>
     <!-- Input for cocktail_id end -->
   </div>
   <!-- Label and input for cocktail_id end -->
