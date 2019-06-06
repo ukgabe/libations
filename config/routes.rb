@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Photo like resource:
+
+  # CREATE
+  get("/photo_likes/new", { :controller => "photo_likes", :action => "new_form" })
+  post("/create_photo_like", { :controller => "photo_likes", :action => "create_row" })
+
+  # READ
+  get("/photo_likes", { :controller => "photo_likes", :action => "index" })
+  get("/photo_likes/:id_to_display", { :controller => "photo_likes", :action => "show" })
+
+  # UPDATE
+  get("/photo_likes/:prefill_with_id/edit", { :controller => "photo_likes", :action => "edit_form" })
+  post("/update_photo_like/:id_to_modify", { :controller => "photo_likes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_photo_like/:id_to_remove", { :controller => "photo_likes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Photo comment resource:
 
   # CREATE

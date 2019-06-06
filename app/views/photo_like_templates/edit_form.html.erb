@@ -1,0 +1,44 @@
+<h1>
+  Edit photo like #<%= @photo_like.id %>
+</h1>
+
+<hr>
+
+<!-- Form photo_like start -->
+<form action="/update_photo_like/<%= @photo_like.id %>" method="post">
+<!-- Form photo_like end -->
+
+  <!-- Label and input for photo_id start -->
+  <div class="form-group">
+    <label for="photo_id">
+      Photo
+    </label>
+
+    <!-- Input for photo_id start -->
+    <input type="text" id="photo_id" name="photo_id" class="form-control" value="<%= @photo_like.photo_id %>">
+    <!-- Input for photo_id end -->
+  </div>
+  <!-- Label and input for photo_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @photo_like.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update photo like
+  </button>
+</form>
+
+<hr>
+
+<a href="/photo_likes">
+  Go back
+</a>
