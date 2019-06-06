@@ -55,6 +55,22 @@ class PhotoCommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_photo
+    @photo_comment = PhotoComment.find(params.fetch("id_to_remove"))
+
+    @photo_comment.destroy
+
+    redirect_to("/cocktail_photos/#{@photo_comment.photo_id}", notice: "PhotoComment deleted successfully.")
+  end
+
+  def destroy_row_from_author
+    @photo_comment = PhotoComment.find(params.fetch("id_to_remove"))
+
+    @photo_comment.destroy
+
+    redirect_to("/users/#{@photo_comment.author_id}", notice: "PhotoComment deleted successfully.")
+  end
+
   def destroy_row
     @photo_comment = PhotoComment.find(params.fetch("id_to_remove"))
 

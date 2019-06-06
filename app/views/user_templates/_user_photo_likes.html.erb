@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Photo Likes
+
+    <a data-toggle="collapse" href="#user_photo_likes_new_form">
+      Add photo like
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.photo_likes.each do |photo_like| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/photo_likes/<%= photo_like.id %>">
+          <%= photo_like.photo_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

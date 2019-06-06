@@ -55,6 +55,22 @@ class VenueCommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_venue
+    @venue_comment = VenueComment.find(params.fetch("id_to_remove"))
+
+    @venue_comment.destroy
+
+    redirect_to("/venues/#{@venue_comment.venue_id}", notice: "VenueComment deleted successfully.")
+  end
+
+  def destroy_row_from_author
+    @venue_comment = VenueComment.find(params.fetch("id_to_remove"))
+
+    @venue_comment.destroy
+
+    redirect_to("/users/#{@venue_comment.author_id}", notice: "VenueComment deleted successfully.")
+  end
+
   def destroy_row
     @venue_comment = VenueComment.find(params.fetch("id_to_remove"))
 

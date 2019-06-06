@@ -53,6 +53,22 @@ class VenueLikesController < ApplicationController
     end
   end
 
+  def destroy_row_from_venue
+    @venue_like = VenueLike.find(params.fetch("id_to_remove"))
+
+    @venue_like.destroy
+
+    redirect_to("/venues/#{@venue_like.venue_id}", notice: "VenueLike deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @venue_like = VenueLike.find(params.fetch("id_to_remove"))
+
+    @venue_like.destroy
+
+    redirect_to("/users/#{@venue_like.user_id}", notice: "VenueLike deleted successfully.")
+  end
+
   def destroy_row
     @venue_like = VenueLike.find(params.fetch("id_to_remove"))
 

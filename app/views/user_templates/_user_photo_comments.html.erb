@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Photo Comments
+
+    <a data-toggle="collapse" href="#user_photo_comments_new_form">
+      Add photo comment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.photo_comments.each do |photo_comment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/photo_comments/<%= photo_comment.id %>">
+          <%= photo_comment.author_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

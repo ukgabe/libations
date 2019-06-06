@@ -59,6 +59,14 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy_row_from_venue
+    @cocktail = Cocktail.find(params.fetch("id_to_remove"))
+
+    @cocktail.destroy
+
+    redirect_to("/venues/#{@cocktail.venue_id}", notice: "Cocktail deleted successfully.")
+  end
+
   def destroy_row
     @cocktail = Cocktail.find(params.fetch("id_to_remove"))
 

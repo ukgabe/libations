@@ -61,6 +61,22 @@ class CocktailPhotosController < ApplicationController
     end
   end
 
+  def destroy_row_from_cocktail
+    @cocktail_photo = CocktailPhoto.find(params.fetch("id_to_remove"))
+
+    @cocktail_photo.destroy
+
+    redirect_to("/cocktails/#{@cocktail_photo.cocktail_id}", notice: "CocktailPhoto deleted successfully.")
+  end
+
+  def destroy_row_from_owner
+    @cocktail_photo = CocktailPhoto.find(params.fetch("id_to_remove"))
+
+    @cocktail_photo.destroy
+
+    redirect_to("/users/#{@cocktail_photo.owner_id}", notice: "CocktailPhoto deleted successfully.")
+  end
+
   def destroy_row
     @cocktail_photo = CocktailPhoto.find(params.fetch("id_to_remove"))
 

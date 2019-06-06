@@ -53,6 +53,22 @@ class PhotoLikesController < ApplicationController
     end
   end
 
+  def destroy_row_from_photo
+    @photo_like = PhotoLike.find(params.fetch("id_to_remove"))
+
+    @photo_like.destroy
+
+    redirect_to("/cocktail_photos/#{@photo_like.photo_id}", notice: "PhotoLike deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @photo_like = PhotoLike.find(params.fetch("id_to_remove"))
+
+    @photo_like.destroy
+
+    redirect_to("/users/#{@photo_like.user_id}", notice: "PhotoLike deleted successfully.")
+  end
+
   def destroy_row
     @photo_like = PhotoLike.find(params.fetch("id_to_remove"))
 
