@@ -4,6 +4,8 @@ RSpec.describe Cocktail, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:cocktail_photos) }
+
     it { should belong_to(:venue) }
 
     end
