@@ -1,6 +1,7 @@
 class PhotoLikesController < ApplicationController
   def index
-    @photo_likes = PhotoLike.page(params[:page]).per(10)
+    @q = PhotoLike.ransack(params[:q])
+    @photo_likes = @q.result(:distinct => true).includes(:photo, :user).page(params[:page]).per(10)
 
     render("photo_like_templates/index.html.erb")
   end

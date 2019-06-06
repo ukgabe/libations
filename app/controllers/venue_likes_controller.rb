@@ -1,6 +1,7 @@
 class VenueLikesController < ApplicationController
   def index
-    @venue_likes = VenueLike.page(params[:page]).per(10)
+    @q = VenueLike.ransack(params[:q])
+    @venue_likes = @q.result(:distinct => true).includes(:venue, :user).page(params[:page]).per(10)
 
     render("venue_like_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.page(params[:page]).per(10)
+    @q = Cocktail.ransack(params[:q])
+    @cocktails = @q.result(:distinct => true).includes(:venue, :cocktail_photos).page(params[:page]).per(10)
 
     render("cocktail_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class VenueCommentsController < ApplicationController
   def index
-    @venue_comments = VenueComment.page(params[:page]).per(10)
+    @q = VenueComment.ransack(params[:q])
+    @venue_comments = @q.result(:distinct => true).includes(:venue, :author).page(params[:page]).per(10)
 
     render("venue_comment_templates/index.html.erb")
   end
