@@ -1,0 +1,132 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All cocktail photos
+    </h1>
+
+    <a href="/cocktail_photos/new" class="btn btn-block btn-outline-secondary">
+      Add a new cocktail photo
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Caption
+        </th>
+
+        <th>
+          Owner
+        </th>
+
+        <th>
+          Cocktail
+        </th>
+
+        <th>
+          Comment count
+        </th>
+
+        <th>
+          Likes count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @cocktail_photos.each do |cocktail_photo| %>
+      <tr>
+        <!-- Display cocktail_photo.id start -->
+        <td>
+          <%= cocktail_photo.id %>
+        </td>
+        <!-- Display cocktail_photo.id end -->
+
+        <!-- Display cocktail_photo.image start -->
+        <td>
+          <%= cocktail_photo.image %>
+        </td>
+        <!-- Display cocktail_photo.image end -->
+
+        <!-- Display cocktail_photo.caption start -->
+        <td>
+          <%= cocktail_photo.caption %>
+        </td>
+        <!-- Display cocktail_photo.caption end -->
+
+        <!-- Display cocktail_photo.owner_id start -->
+        <td>
+          <%= cocktail_photo.owner_id %>
+        </td>
+        <!-- Display cocktail_photo.owner_id end -->
+
+        <!-- Display cocktail_photo.cocktail_id start -->
+        <td>
+          <%= cocktail_photo.cocktail_id %>
+        </td>
+        <!-- Display cocktail_photo.cocktail_id end -->
+
+        <!-- Display cocktail_photo.comment_count start -->
+        <td>
+          <%= cocktail_photo.comment_count %>
+        </td>
+        <!-- Display cocktail_photo.comment_count end -->
+
+        <!-- Display cocktail_photo.likes_count start -->
+        <td>
+          <%= cocktail_photo.likes_count %>
+        </td>
+        <!-- Display cocktail_photo.likes_count end -->
+
+        <!-- Display cocktail_photo.created_at start -->
+        <td>
+          <%= time_ago_in_words(cocktail_photo.created_at) %> ago
+        </td>
+        <!-- Display cocktail_photo.created_at end -->
+
+        <!-- Display cocktail_photo.updated_at start -->
+        <td>
+          <%= time_ago_in_words(cocktail_photo.updated_at) %> ago
+        </td>
+        <!-- Display cocktail_photo.updated_at end -->
+
+        <td>
+          <a href="/cocktail_photos/<%= cocktail_photo.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
