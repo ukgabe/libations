@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @venue_comment.present? %>
   <% if @venue_comment.errors.any? %>
     <% @venue_comment.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form venue_comment start -->
 <form action="/create_venue_comment" method="post">
-<!-- Form venue_comment end -->
 
-  <!-- Label and input for author_id start -->
   <div class="form-group">
     <label for="author_id">
       Author
     </label>
 
-    <!-- Input for author_id start -->
     <%= select_tag(:author_id, options_from_collection_for_select(User.all, :id, :created_at, @venue_comment.author_id), :class => "form-control") %>
-    <!-- Input for author_id end -->
   </div>
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <label for="venue_id">
       Venue
     </label>
 
-    <!-- Input for venue_id start -->
     <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @venue_comment.venue_id), :class => "form-control") %>
-    <!-- Input for venue_id end -->
   </div>
-  <!-- Label and input for venue_id end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control" value="<%= @venue_comment.body %>">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create venue comment

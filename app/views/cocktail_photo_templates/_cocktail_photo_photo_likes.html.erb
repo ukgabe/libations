@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @cocktail_photo.photo_likes.each do |photo_like| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/photo_likes/<%= photo_like.id %>">
           <%= photo_like.photo_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_photo_like_from_photo/<%= photo_like.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="cocktail_photo_photo_likes_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "cocktail_photo_templates/cocktail_photo_photo_likes_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

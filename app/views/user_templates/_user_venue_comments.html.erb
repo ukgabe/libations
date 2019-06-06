@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.venue_comments.each do |venue_comment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/venue_comments/<%= venue_comment.id %>">
           <%= venue_comment.author_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

@@ -4,69 +4,47 @@
 
 <hr>
 
-<!-- Form cocktail start -->
 <form action="/update_cocktail/<%= @cocktail.id %>" method="post">
-<!-- Form cocktail end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @cocktail.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for ingredients start -->
   <div class="form-group">
     <label for="ingredients">
       Ingredients
     </label>
 
-    <!-- Input for ingredients start -->
     <input type="text" id="ingredients" name="ingredients" class="form-control" value="<%= @cocktail.ingredients %>">
-    <!-- Input for ingredients end -->
   </div>
-  <!-- Label and input for ingredients end -->
 
-  <!-- Label and input for likes_count start -->
   <div class="form-group">
     <label for="likes_count">
       Likes count
     </label>
 
-    <!-- Input for likes_count start -->
     <input type="text" id="likes_count" name="likes_count" class="form-control" value="<%= @cocktail.likes_count %>">
-    <!-- Input for likes_count end -->
   </div>
-  <!-- Label and input for likes_count end -->
 
-  <!-- Label and input for comment_count start -->
   <div class="form-group">
     <label for="comment_count">
       Comment count
     </label>
 
-    <!-- Input for comment_count start -->
     <input type="text" id="comment_count" name="comment_count" class="form-control" value="<%= @cocktail.comment_count %>">
-    <!-- Input for comment_count end -->
   </div>
-  <!-- Label and input for comment_count end -->
 
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <label for="venue_id">
       Venue
     </label>
 
-    <!-- Input for venue_id start -->
     <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @cocktail.venue_id), :class => "form-control") %>
-    <!-- Input for venue_id end -->
   </div>
-  <!-- Label and input for venue_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update cocktail

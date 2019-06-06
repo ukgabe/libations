@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "cocktail_photo_templates/cocktail_photos_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -70,25 +66,18 @@
 
       <% @cocktail_photos.each do |cocktail_photo| %>
       <tr>
-        <!-- Display cocktail_photo.id start -->
         <td>
           <%= cocktail_photo.id %>
         </td>
-        <!-- Display cocktail_photo.id end -->
 
-        <!-- Display cocktail_photo.image start -->
         <td>
           <img src='<%= cocktail_photo.image %>' class='img-fluid'>
         </td>
-        <!-- Display cocktail_photo.image end -->
 
-        <!-- Display cocktail_photo.caption start -->
         <td>
           <%= cocktail_photo.caption %>
         </td>
-        <!-- Display cocktail_photo.caption end -->
 
-        <!-- Display cocktail_photo.owner_id start -->
         <td>
           <% if cocktail_photo.owner.present? %>
             <a href="/users/<%= cocktail_photo.owner.id %>">
@@ -96,9 +85,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display cocktail_photo.owner_id end -->
 
-        <!-- Display cocktail_photo.cocktail_id start -->
         <td>
           <% if cocktail_photo.cocktail.present? %>
             <a href="/cocktails/<%= cocktail_photo.cocktail.id %>">
@@ -106,31 +93,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display cocktail_photo.cocktail_id end -->
 
-        <!-- Display cocktail_photo.comment_count start -->
         <td>
           <%= cocktail_photo.comment_count %>
         </td>
-        <!-- Display cocktail_photo.comment_count end -->
 
-        <!-- Display cocktail_photo.likes_count start -->
         <td>
           <%= cocktail_photo.likes_count %>
         </td>
-        <!-- Display cocktail_photo.likes_count end -->
 
-        <!-- Display cocktail_photo.created_at start -->
         <td>
           <%= time_ago_in_words(cocktail_photo.created_at) %> ago
         </td>
-        <!-- Display cocktail_photo.created_at end -->
 
-        <!-- Display cocktail_photo.updated_at start -->
         <td>
           <%= time_ago_in_words(cocktail_photo.updated_at) %> ago
         </td>
-        <!-- Display cocktail_photo.updated_at end -->
 
         <td>
           <a href="/cocktail_photos/<%= cocktail_photo.id %>">

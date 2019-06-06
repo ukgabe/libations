@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link venue_like start -->
       <div class="col">
         <a href="/venue_likes/<%= @venue_like.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit venue like
         </a>
       </div>
-      <!-- Edit link venue_like end -->
 
-      <!-- Delete link venue_like start -->
       <div class="col">
         <a href="/delete_venue_like/<%= @venue_like.id %>" class="btn btn-block btn-outline-secondary">
           Delete venue like
         </a>
       </div>
-      <!-- Delete link venue_like end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @venue_like.user.present? %>
           <a href="/users/<%= @venue_like.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Venue
       </dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @venue_like.venue.present? %>
           <a href="/venues/<%= @venue_like.venue_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@venue_like.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@venue_like.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

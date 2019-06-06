@@ -11,64 +11,51 @@
         </a>
       </div>
 
-      <!-- Edit link cocktail start -->
       <div class="col">
         <a href="/cocktails/<%= @cocktail.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit cocktail
         </a>
       </div>
-      <!-- Edit link cocktail end -->
 
-      <!-- Delete link cocktail start -->
       <div class="col">
         <a href="/delete_cocktail/<%= @cocktail.id %>" class="btn btn-block btn-outline-secondary">
           Delete cocktail
         </a>
       </div>
-      <!-- Delete link cocktail end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @cocktail.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Ingredients
       </dt>
-      <!-- Display ingredients start -->
       <dd>
         <%= @cocktail.ingredients %>
       </dd>
-      <!-- Display ingredients end -->
 
       <dt>
         Likes count
       </dt>
-      <!-- Display likes_count start -->
       <dd>
         <%= @cocktail.likes_count %>
       </dd>
-      <!-- Display likes_count end -->
 
       <dt>
         Comment count
       </dt>
-      <!-- Display comment_count start -->
       <dd>
         <%= @cocktail.comment_count %>
       </dd>
-      <!-- Display comment_count end -->
 
       <dt>
         Venue
       </dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @cocktail.venue.present? %>
           <a href="/venues/<%= @cocktail.venue_id %>">
@@ -76,33 +63,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@cocktail.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@cocktail.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "cocktail_templates/cocktail_cocktail_photos" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

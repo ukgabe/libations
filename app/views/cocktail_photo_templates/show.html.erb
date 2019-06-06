@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link cocktail_photo start -->
       <div class="col">
         <a href="/cocktail_photos/<%= @cocktail_photo.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit cocktail photo
         </a>
       </div>
-      <!-- Edit link cocktail_photo end -->
 
-      <!-- Delete link cocktail_photo start -->
       <div class="col">
         <a href="/delete_cocktail_photo/<%= @cocktail_photo.id %>" class="btn btn-block btn-outline-secondary">
           Delete cocktail photo
         </a>
       </div>
-      <!-- Delete link cocktail_photo end -->
     </div>
 
     <dl>
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <img src="<%= @cocktail_photo.image %>" class="img-fluid">
       </dd>
-      <!-- Display image end -->
 
       <dt>
         Caption
       </dt>
-      <!-- Display caption start -->
       <dd>
         <%= @cocktail_photo.caption %>
       </dd>
-      <!-- Display caption end -->
 
       <dt>
         Owner
       </dt>
-      <!-- Display owner_id start -->
       <dd>
         <% if @cocktail_photo.owner.present? %>
           <a href="/users/<%= @cocktail_photo.owner_id %>">
@@ -58,12 +49,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display owner_id end -->
 
       <dt>
         Cocktail
       </dt>
-      <!-- Display cocktail_id start -->
       <dd>
         <% if @cocktail_photo.cocktail.present? %>
           <a href="/cocktails/<%= @cocktail_photo.cocktail_id %>">
@@ -71,48 +60,38 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display cocktail_id end -->
 
       <dt>
         Comment count
       </dt>
-      <!-- Display comment_count start -->
       <dd>
         <%= @cocktail_photo.comment_count %>
       </dd>
-      <!-- Display comment_count end -->
 
       <dt>
         Likes count
       </dt>
-      <!-- Display likes_count start -->
       <dd>
         <%= @cocktail_photo.likes_count %>
       </dd>
-      <!-- Display likes_count end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@cocktail_photo.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@cocktail_photo.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "cocktail_photo_templates/cocktail_photo_photo_comments" %>
@@ -124,4 +103,3 @@
     <%= render partial: "cocktail_photo_templates/cocktail_photo_photo_likes" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

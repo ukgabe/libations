@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @venue.venue_likes.each do |venue_like| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/venue_likes/<%= venue_like.id %>">
           <%= venue_like.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_venue_like_from_venue/<%= venue_like.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="venue_venue_likes_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "venue_templates/venue_venue_likes_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

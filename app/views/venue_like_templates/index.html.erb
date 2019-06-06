@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "venue_like_templates/venue_likes_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,13 +50,10 @@
 
       <% @venue_likes.each do |venue_like| %>
       <tr>
-        <!-- Display venue_like.id start -->
         <td>
           <%= venue_like.id %>
         </td>
-        <!-- Display venue_like.id end -->
 
-        <!-- Display venue_like.user_id start -->
         <td>
           <% if venue_like.user.present? %>
             <a href="/users/<%= venue_like.user.id %>">
@@ -68,9 +61,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display venue_like.user_id end -->
 
-        <!-- Display venue_like.venue_id start -->
         <td>
           <% if venue_like.venue.present? %>
             <a href="/venues/<%= venue_like.venue.id %>">
@@ -78,19 +69,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display venue_like.venue_id end -->
 
-        <!-- Display venue_like.created_at start -->
         <td>
           <%= time_ago_in_words(venue_like.created_at) %> ago
         </td>
-        <!-- Display venue_like.created_at end -->
 
-        <!-- Display venue_like.updated_at start -->
         <td>
           <%= time_ago_in_words(venue_like.updated_at) %> ago
         </td>
-        <!-- Display venue_like.updated_at end -->
 
         <td>
           <a href="/venue_likes/<%= venue_like.id %>">

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @photo_comment.errors.any? %>
   <% @photo_comment.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,45 +12,31 @@
 
 <hr>
 
-<!-- Form photo_comment start -->
 <form action="/update_photo_comment/<%= @photo_comment.id %>" method="post">
-<!-- Form photo_comment end -->
 
-  <!-- Label and input for author_id start -->
   <div class="form-group">
     <label for="author_id">
       Author
     </label>
 
-    <!-- Input for author_id start -->
     <%= select_tag(:author_id, options_from_collection_for_select(User.all, :id, :created_at, @photo_comment.author_id), :class => "form-control") %>
-    <!-- Input for author_id end -->
   </div>
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for photo_id start -->
   <div class="form-group">
     <label for="photo_id">
       Photo
     </label>
 
-    <!-- Input for photo_id start -->
     <%= select_tag(:photo_id, options_from_collection_for_select(CocktailPhoto.all, :id, :created_at, @photo_comment.photo_id), :class => "form-control") %>
-    <!-- Input for photo_id end -->
   </div>
-  <!-- Label and input for photo_id end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control" value="<%= @photo_comment.body %>">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update photo comment
