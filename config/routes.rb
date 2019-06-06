@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Venue like resource:
+
+  # CREATE
+  get("/venue_likes/new", { :controller => "venue_likes", :action => "new_form" })
+  post("/create_venue_like", { :controller => "venue_likes", :action => "create_row" })
+
+  # READ
+  get("/venue_likes", { :controller => "venue_likes", :action => "index" })
+  get("/venue_likes/:id_to_display", { :controller => "venue_likes", :action => "show" })
+
+  # UPDATE
+  get("/venue_likes/:prefill_with_id/edit", { :controller => "venue_likes", :action => "edit_form" })
+  post("/update_venue_like/:id_to_modify", { :controller => "venue_likes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_venue_like/:id_to_remove", { :controller => "venue_likes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Venue comment resource:
 
   # CREATE

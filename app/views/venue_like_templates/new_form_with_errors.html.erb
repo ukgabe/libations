@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @venue_like.present? %>
+  <% if @venue_like.errors.any? %>
+    <% @venue_like.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new venue like
+</h1>
+
+
+<hr>
+
+<!-- Form venue_like start -->
+<form action="/create_venue_like" method="post">
+<!-- Form venue_like end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @venue_like.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for venue_id start -->
+  <div class="form-group">
+    <label for="venue_id">
+      Venue
+    </label>
+
+    <!-- Input for venue_id start -->
+    <input type="text" id="venue_id" name="venue_id" class="form-control" value="<%= @venue_like.venue_id %>">
+    <!-- Input for venue_id end -->
+  </div>
+  <!-- Label and input for venue_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create venue like
+  </button>
+</form>
+
+<hr>
+
+<a href="/venue_likes">
+  Go back
+</a>
