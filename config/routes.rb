@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Cocktail resource:
+
+  # CREATE
+  get("/cocktails/new", { :controller => "cocktails", :action => "new_form" })
+  post("/create_cocktail", { :controller => "cocktails", :action => "create_row" })
+
+  # READ
+  get("/cocktails", { :controller => "cocktails", :action => "index" })
+  get("/cocktails/:id_to_display", { :controller => "cocktails", :action => "show" })
+
+  # UPDATE
+  get("/cocktails/:prefill_with_id/edit", { :controller => "cocktails", :action => "edit_form" })
+  post("/update_cocktail/:id_to_modify", { :controller => "cocktails", :action => "update_row" })
+
+  # DELETE
+  get("/delete_cocktail/:id_to_remove", { :controller => "cocktails", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Venue resource:
 
   # CREATE
