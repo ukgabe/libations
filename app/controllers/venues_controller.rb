@@ -27,7 +27,7 @@ class VenuesController < ApplicationController
     @venue.address = params.fetch("address")
     @venue.comment_count = params.fetch("comment_count")
     @venue.likes_count = params.fetch("likes_count")
-    @venue.photo = params.fetch("photo")
+    @venue.photo = params.fetch("photo") if params.key?("photo")
     @venue.description = params.fetch("description")
 
     if @venue.valid?
@@ -52,7 +52,7 @@ class VenuesController < ApplicationController
     @venue.address = params.fetch("address")
     @venue.comment_count = params.fetch("comment_count")
     @venue.likes_count = params.fetch("likes_count")
-    @venue.photo = params.fetch("photo")
+    @venue.photo = params.fetch("photo") if params.key?("photo")
     @venue.description = params.fetch("description")
 
     if @venue.valid?

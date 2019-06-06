@@ -6,7 +6,7 @@
 <hr>
 
 <!-- Form venue start -->
-<form action="/create_venue" method="post">
+<form action="/create_venue" method="post" enctype="multipart/form-data">
 <!-- Form venue end -->
 
   <!-- Label and input for name start -->
@@ -64,7 +64,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

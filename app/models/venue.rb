@@ -1,4 +1,6 @@
 class Venue < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   has_many   :venue_likes,

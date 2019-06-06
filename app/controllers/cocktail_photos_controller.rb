@@ -22,7 +22,7 @@ class CocktailPhotosController < ApplicationController
   def create_row
     @cocktail_photo = CocktailPhoto.new
 
-    @cocktail_photo.image = params.fetch("image")
+    @cocktail_photo.image = params.fetch("image") if params.key?("image")
     @cocktail_photo.caption = params.fetch("caption")
     @cocktail_photo.owner_id = params.fetch("owner_id")
     @cocktail_photo.cocktail_id = params.fetch("cocktail_id")
@@ -41,7 +41,7 @@ class CocktailPhotosController < ApplicationController
   def create_row_from_cocktail
     @cocktail_photo = CocktailPhoto.new
 
-    @cocktail_photo.image = params.fetch("image")
+    @cocktail_photo.image = params.fetch("image") if params.key?("image")
     @cocktail_photo.caption = params.fetch("caption")
     @cocktail_photo.owner_id = params.fetch("owner_id")
     @cocktail_photo.cocktail_id = params.fetch("cocktail_id")
@@ -66,7 +66,7 @@ class CocktailPhotosController < ApplicationController
   def update_row
     @cocktail_photo = CocktailPhoto.find(params.fetch("id_to_modify"))
 
-    @cocktail_photo.image = params.fetch("image")
+    @cocktail_photo.image = params.fetch("image") if params.key?("image")
     @cocktail_photo.caption = params.fetch("caption")
     @cocktail_photo.owner_id = params.fetch("owner_id")
     @cocktail_photo.cocktail_id = params.fetch("cocktail_id")
