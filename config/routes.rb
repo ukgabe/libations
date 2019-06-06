@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Photo comment resource:
+
+  # CREATE
+  get("/photo_comments/new", { :controller => "photo_comments", :action => "new_form" })
+  post("/create_photo_comment", { :controller => "photo_comments", :action => "create_row" })
+
+  # READ
+  get("/photo_comments", { :controller => "photo_comments", :action => "index" })
+  get("/photo_comments/:id_to_display", { :controller => "photo_comments", :action => "show" })
+
+  # UPDATE
+  get("/photo_comments/:prefill_with_id/edit", { :controller => "photo_comments", :action => "edit_form" })
+  post("/update_photo_comment/:id_to_modify", { :controller => "photo_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_photo_comment/:id_to_remove", { :controller => "photo_comments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Venue like resource:
 
   # CREATE

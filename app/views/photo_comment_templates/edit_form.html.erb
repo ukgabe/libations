@@ -1,0 +1,56 @@
+<h1>
+  Edit photo comment #<%= @photo_comment.id %>
+</h1>
+
+<hr>
+
+<!-- Form photo_comment start -->
+<form action="/update_photo_comment/<%= @photo_comment.id %>" method="post">
+<!-- Form photo_comment end -->
+
+  <!-- Label and input for author_id start -->
+  <div class="form-group">
+    <label for="author_id">
+      Author
+    </label>
+
+    <!-- Input for author_id start -->
+    <input type="text" id="author_id" name="author_id" class="form-control" value="<%= @photo_comment.author_id %>">
+    <!-- Input for author_id end -->
+  </div>
+  <!-- Label and input for author_id end -->
+
+  <!-- Label and input for photo_id start -->
+  <div class="form-group">
+    <label for="photo_id">
+      Photo
+    </label>
+
+    <!-- Input for photo_id start -->
+    <input type="text" id="photo_id" name="photo_id" class="form-control" value="<%= @photo_comment.photo_id %>">
+    <!-- Input for photo_id end -->
+  </div>
+  <!-- Label and input for photo_id end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control" value="<%= @photo_comment.body %>">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update photo comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/photo_comments">
+  Go back
+</a>
