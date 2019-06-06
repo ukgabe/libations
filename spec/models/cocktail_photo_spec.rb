@@ -4,6 +4,8 @@ RSpec.describe CocktailPhoto, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:owner) }
+
     it { should have_many(:photo_likes) }
 
     it { should have_many(:photo_comments) }

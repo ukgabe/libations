@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :cocktail_photos,
+             :foreign_key => "owner_id",
+             :dependent => :destroy
+
   has_many   :photo_comments,
              :foreign_key => "author_id",
              :dependent => :destroy
