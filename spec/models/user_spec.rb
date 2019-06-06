@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:venue_likes) }
+
     it { should have_many(:venue_comments) }
 
     it { should have_many(:follow_requests) }
