@@ -1,0 +1,57 @@
+<h1>
+  Add a new venue comment
+</h1>
+
+
+<hr>
+
+<!-- Form venue_comment start -->
+<form action="/create_venue_comment" method="post">
+<!-- Form venue_comment end -->
+
+  <!-- Label and input for author_id start -->
+  <div class="form-group">
+    <label for="author_id">
+      Author
+    </label>
+
+    <!-- Input for author_id start -->
+    <input type="text" id="author_id" name="author_id" class="form-control">
+    <!-- Input for author_id end -->
+  </div>
+  <!-- Label and input for author_id end -->
+
+  <!-- Label and input for venue_id start -->
+  <div class="form-group">
+    <label for="venue_id">
+      Venue
+    </label>
+
+    <!-- Input for venue_id start -->
+    <input type="text" id="venue_id" name="venue_id" class="form-control">
+    <!-- Input for venue_id end -->
+  </div>
+  <!-- Label and input for venue_id end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create venue comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/venue_comments">
+  Go back
+</a>

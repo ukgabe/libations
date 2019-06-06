@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Venue comment resource:
+
+  # CREATE
+  get("/venue_comments/new", { :controller => "venue_comments", :action => "new_form" })
+  post("/create_venue_comment", { :controller => "venue_comments", :action => "create_row" })
+
+  # READ
+  get("/venue_comments", { :controller => "venue_comments", :action => "index" })
+  get("/venue_comments/:id_to_display", { :controller => "venue_comments", :action => "show" })
+
+  # UPDATE
+  get("/venue_comments/:prefill_with_id/edit", { :controller => "venue_comments", :action => "edit_form" })
+  post("/update_venue_comment/:id_to_modify", { :controller => "venue_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_venue_comment/:id_to_remove", { :controller => "venue_comments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Follow request resource:
 
   # CREATE
