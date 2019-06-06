@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :follow_requests,
+             :foreign_key => "sender_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
