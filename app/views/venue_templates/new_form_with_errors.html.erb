@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @venue.present? %>
+  <% if @venue.errors.any? %>
+    <% @venue.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new venue
+</h1>
+
+
+<hr>
+
+<!-- Form venue start -->
+<form action="/create_venue" method="post">
+<!-- Form venue end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @venue.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for address start -->
+  <div class="form-group">
+    <label for="address">
+      Address
+    </label>
+
+    <!-- Input for address start -->
+    <input type="text" id="address" name="address" class="form-control" value="<%= @venue.address %>">
+    <!-- Input for address end -->
+  </div>
+  <!-- Label and input for address end -->
+
+  <!-- Label and input for comment_count start -->
+  <div class="form-group">
+    <label for="comment_count">
+      Comment count
+    </label>
+
+    <!-- Input for comment_count start -->
+    <input type="text" id="comment_count" name="comment_count" class="form-control" value="<%= @venue.comment_count %>">
+    <!-- Input for comment_count end -->
+  </div>
+  <!-- Label and input for comment_count end -->
+
+  <!-- Label and input for likes_count start -->
+  <div class="form-group">
+    <label for="likes_count">
+      Likes count
+    </label>
+
+    <!-- Input for likes_count start -->
+    <input type="text" id="likes_count" name="likes_count" class="form-control" value="<%= @venue.likes_count %>">
+    <!-- Input for likes_count end -->
+  </div>
+  <!-- Label and input for likes_count end -->
+
+  <!-- Label and input for photo start -->
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <!-- Input for photo start -->
+    <input type="text" id="photo" name="photo" class="form-control" value="<%= @venue.photo %>">
+    <!-- Input for photo end -->
+  </div>
+  <!-- Label and input for photo end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @venue.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create venue
+  </button>
+</form>
+
+<hr>
+
+<a href="/venues">
+  Go back
+</a>
