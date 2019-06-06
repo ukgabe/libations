@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/photo_likes/new", { :controller => "photo_likes", :action => "new_form" })
   post("/create_photo_like", { :controller => "photo_likes", :action => "create_row" })
+  post("/create_photo_like_from_cocktail_photo", { :controller => "photo_likes", :action => "create_row_from_cocktail_photo" })
 
   # READ
   get("/photo_likes", { :controller => "photo_likes", :action => "index" })
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/photo_comments/new", { :controller => "photo_comments", :action => "new_form" })
   post("/create_photo_comment", { :controller => "photo_comments", :action => "create_row" })
+  post("/create_photo_comment_from_cocktail_photo", { :controller => "photo_comments", :action => "create_row_from_cocktail_photo" })
 
   # READ
   get("/photo_comments", { :controller => "photo_comments", :action => "index" })
@@ -49,6 +51,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/venue_likes/new", { :controller => "venue_likes", :action => "new_form" })
   post("/create_venue_like", { :controller => "venue_likes", :action => "create_row" })
+  post("/create_venue_like_from_venue", { :controller => "venue_likes", :action => "create_row_from_venue" })
 
   # READ
   get("/venue_likes", { :controller => "venue_likes", :action => "index" })
@@ -70,6 +73,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/venue_comments/new", { :controller => "venue_comments", :action => "new_form" })
   post("/create_venue_comment", { :controller => "venue_comments", :action => "create_row" })
+  post("/create_venue_comment_from_venue", { :controller => "venue_comments", :action => "create_row_from_venue" })
 
   # READ
   get("/venue_comments", { :controller => "venue_comments", :action => "index" })
@@ -121,6 +125,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/cocktail_photos/new", { :controller => "cocktail_photos", :action => "new_form" })
   post("/create_cocktail_photo", { :controller => "cocktail_photos", :action => "create_row" })
+  post("/create_cocktail_photo_from_cocktail", { :controller => "cocktail_photos", :action => "create_row_from_cocktail" })
 
   # READ
   get("/cocktail_photos", { :controller => "cocktail_photos", :action => "index" })
@@ -142,6 +147,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/cocktails/new", { :controller => "cocktails", :action => "new_form" })
   post("/create_cocktail", { :controller => "cocktails", :action => "create_row" })
+  post("/create_cocktail_from_venue", { :controller => "cocktails", :action => "create_row_from_venue" })
 
   # READ
   get("/cocktails", { :controller => "cocktails", :action => "index" })

@@ -1,0 +1,73 @@
+<!-- Form cocktail_photo start -->
+<form action="/create_cocktail_photo_from_cocktail" method="post">
+<!-- Form cocktail_photo end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control" value="<%= @cocktail_photo.image %>">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for caption start -->
+  <div class="form-group">
+    <label for="caption">
+      Caption
+    </label>
+
+    <!-- Input for caption start -->
+    <input type="text" id="caption" name="caption" class="form-control" value="<%= @cocktail_photo.caption %>">
+    <!-- Input for caption end -->
+  </div>
+  <!-- Label and input for caption end -->
+
+  <!-- Label and input for owner_id start -->
+  <div class="form-group">
+    <label for="owner_id">
+      Owner
+    </label>
+
+    <!-- Input for owner_id start -->
+    <input type="text" id="owner_id" name="owner_id" class="form-control" value="<%= @cocktail_photo.owner_id %>">
+    <!-- Input for owner_id end -->
+  </div>
+  <!-- Label and input for owner_id end -->
+
+  <!-- Label and input for cocktail_id start -->
+  <!-- Input for cocktail_id start -->
+  <input type="hidden" name="cocktail_id" value="<%= @cocktail.id %>">
+  <!-- Input for cocktail_id end -->
+
+  <!-- Label and input for comment_count start -->
+  <div class="form-group">
+    <label for="comment_count">
+      Comment count
+    </label>
+
+    <!-- Input for comment_count start -->
+    <input type="text" id="comment_count" name="comment_count" class="form-control" value="<%= @cocktail_photo.comment_count %>">
+    <!-- Input for comment_count end -->
+  </div>
+  <!-- Label and input for comment_count end -->
+
+  <!-- Label and input for likes_count start -->
+  <div class="form-group">
+    <label for="likes_count">
+      Likes count
+    </label>
+
+    <!-- Input for likes_count start -->
+    <input type="text" id="likes_count" name="likes_count" class="form-control" value="<%= @cocktail_photo.likes_count %>">
+    <!-- Input for likes_count end -->
+  </div>
+  <!-- Label and input for likes_count end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create cocktail photo
+  </button>
+</form>

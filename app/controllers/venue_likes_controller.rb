@@ -32,6 +32,21 @@ class VenueLikesController < ApplicationController
     end
   end
 
+  def create_row_from_venue
+    @venue_like = VenueLike.new
+
+    @venue_like.user_id = params.fetch("user_id")
+    @venue_like.venue_id = params.fetch("venue_id")
+
+    if @venue_like.valid?
+      @venue_like.save
+
+      redirect_to("/venues/#{@venue_like.venue_id}", notice: "VenueLike created successfully.")
+    else
+      render("venue_like_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @venue_like = VenueLike.find(params.fetch("prefill_with_id"))
 

@@ -6,6 +6,9 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @venue_like = VenueLike.new
+    @venue_comment = VenueComment.new
+    @cocktail = Cocktail.new
     @venue = Venue.find(params.fetch("id_to_display"))
 
     render("venue_templates/show.html.erb")

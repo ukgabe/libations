@@ -1,0 +1,25 @@
+<!-- Form venue_like start -->
+<form action="/create_venue_like_from_venue" method="post">
+<!-- Form venue_like end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @venue_like.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for venue_id start -->
+  <!-- Input for venue_id start -->
+  <input type="hidden" name="venue_id" value="<%= @venue.id %>">
+  <!-- Input for venue_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create venue like
+  </button>
+</form>

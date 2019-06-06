@@ -6,6 +6,8 @@ class CocktailPhotosController < ApplicationController
   end
 
   def show
+    @photo_like = PhotoLike.new
+    @photo_comment = PhotoComment.new
     @cocktail_photo = CocktailPhoto.find(params.fetch("id_to_display"))
 
     render("cocktail_photo_templates/show.html.erb")
@@ -31,6 +33,25 @@ class CocktailPhotosController < ApplicationController
       @cocktail_photo.save
 
       redirect_back(:fallback_location => "/cocktail_photos", :notice => "Cocktail photo created successfully.")
+    else
+      render("cocktail_photo_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_cocktail
+    @cocktail_photo = CocktailPhoto.new
+
+    @cocktail_photo.image = params.fetch("image")
+    @cocktail_photo.caption = params.fetch("caption")
+    @cocktail_photo.owner_id = params.fetch("owner_id")
+    @cocktail_photo.cocktail_id = params.fetch("cocktail_id")
+    @cocktail_photo.comment_count = params.fetch("comment_count")
+    @cocktail_photo.likes_count = params.fetch("likes_count")
+
+    if @cocktail_photo.valid?
+      @cocktail_photo.save
+
+      redirect_to("/cocktails/#{@cocktail_photo.cocktail_id}", notice: "CocktailPhoto created successfully.")
     else
       render("cocktail_photo_templates/new_form_with_errors.html.erb")
     end

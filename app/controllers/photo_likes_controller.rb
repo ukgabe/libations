@@ -32,6 +32,21 @@ class PhotoLikesController < ApplicationController
     end
   end
 
+  def create_row_from_cocktail_photo
+    @photo_like = PhotoLike.new
+
+    @photo_like.photo_id = params.fetch("photo_id")
+    @photo_like.user_id = params.fetch("user_id")
+
+    if @photo_like.valid?
+      @photo_like.save
+
+      redirect_to("/cocktail_photos/#{@photo_like.photo_id}", notice: "PhotoLike created successfully.")
+    else
+      render("photo_like_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @photo_like = PhotoLike.find(params.fetch("prefill_with_id"))
 
