@@ -58,13 +58,21 @@
 
         <!-- Display photo_like.photo_id start -->
         <td>
-          <%= photo_like.photo.created_at %>
+          <% if photo_like.photo.present? %>
+            <a href="/cocktail_photos/<%= photo_like.photo.id %>">
+              <%= photo_like.photo.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo_like.photo_id end -->
 
         <!-- Display photo_like.user_id start -->
         <td>
-          <%= photo_like.user.created_at %>
+          <% if photo_like.user.present? %>
+            <a href="/users/<%= photo_like.user.id %>">
+              <%= photo_like.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo_like.user_id end -->
 

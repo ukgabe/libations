@@ -34,7 +34,11 @@
       </dt>
       <!-- Display photo_id start -->
       <dd>
-        <%= @photo_like.photo_id %>
+        <% if @photo_like.photo.present? %>
+          <a href="/cocktail_photos/<%= @photo_like.photo_id %>">
+            <%= @photo_like.photo.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display photo_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @photo_like.user_id %>
+        <% if @photo_like.user.present? %>
+          <a href="/users/<%= @photo_like.user_id %>">
+            <%= @photo_like.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

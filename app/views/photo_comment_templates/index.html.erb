@@ -62,13 +62,21 @@
 
         <!-- Display photo_comment.author_id start -->
         <td>
-          <%= photo_comment.author.created_at %>
+          <% if photo_comment.author.present? %>
+            <a href="/users/<%= photo_comment.author.id %>">
+              <%= photo_comment.author.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo_comment.author_id end -->
 
         <!-- Display photo_comment.photo_id start -->
         <td>
-          <%= photo_comment.photo.created_at %>
+          <% if photo_comment.photo.present? %>
+            <a href="/cocktail_photos/<%= photo_comment.photo.id %>">
+              <%= photo_comment.photo.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo_comment.photo_id end -->
 

@@ -86,13 +86,21 @@
 
         <!-- Display cocktail_photo.owner_id start -->
         <td>
-          <%= cocktail_photo.owner.created_at %>
+          <% if cocktail_photo.owner.present? %>
+            <a href="/users/<%= cocktail_photo.owner.id %>">
+              <%= cocktail_photo.owner.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cocktail_photo.owner_id end -->
 
         <!-- Display cocktail_photo.cocktail_id start -->
         <td>
-          <%= cocktail_photo.cocktail.name %>
+          <% if cocktail_photo.cocktail.present? %>
+            <a href="/cocktails/<%= cocktail_photo.cocktail.id %>">
+              <%= cocktail_photo.cocktail.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cocktail_photo.cocktail_id end -->
 

@@ -62,13 +62,21 @@
 
         <!-- Display venue_comment.author_id start -->
         <td>
-          <%= venue_comment.author.created_at %>
+          <% if venue_comment.author.present? %>
+            <a href="/users/<%= venue_comment.author.id %>">
+              <%= venue_comment.author.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display venue_comment.author_id end -->
 
         <!-- Display venue_comment.venue_id start -->
         <td>
-          <%= venue_comment.venue.name %>
+          <% if venue_comment.venue.present? %>
+            <a href="/venues/<%= venue_comment.venue.id %>">
+              <%= venue_comment.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display venue_comment.venue_id end -->
 

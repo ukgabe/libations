@@ -52,7 +52,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @cocktail_photo.owner_id %>
+        <% if @cocktail_photo.owner.present? %>
+          <a href="/users/<%= @cocktail_photo.owner_id %>">
+            <%= @cocktail_photo.owner.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display cocktail_id start -->
       <dd>
-        <%= @cocktail_photo.cocktail_id %>
+        <% if @cocktail_photo.cocktail.present? %>
+          <a href="/cocktails/<%= @cocktail_photo.cocktail_id %>">
+            <%= @cocktail_photo.cocktail.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display cocktail_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @venue_comment.author_id %>
+        <% if @venue_comment.author.present? %>
+          <a href="/users/<%= @venue_comment.author_id %>">
+            <%= @venue_comment.author.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display venue_id start -->
       <dd>
-        <%= @venue_comment.venue_id %>
+        <% if @venue_comment.venue.present? %>
+          <a href="/venues/<%= @venue_comment.venue_id %>">
+            <%= @venue_comment.venue.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display venue_id end -->
 

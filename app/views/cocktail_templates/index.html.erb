@@ -94,7 +94,11 @@
 
         <!-- Display cocktail.venue_id start -->
         <td>
-          <%= cocktail.venue.name %>
+          <% if cocktail.venue.present? %>
+            <a href="/venues/<%= cocktail.venue.id %>">
+              <%= cocktail.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cocktail.venue_id end -->
 

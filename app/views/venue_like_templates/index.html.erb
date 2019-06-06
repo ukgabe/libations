@@ -58,13 +58,21 @@
 
         <!-- Display venue_like.user_id start -->
         <td>
-          <%= venue_like.user.created_at %>
+          <% if venue_like.user.present? %>
+            <a href="/users/<%= venue_like.user.id %>">
+              <%= venue_like.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display venue_like.user_id end -->
 
         <!-- Display venue_like.venue_id start -->
         <td>
-          <%= venue_like.venue.name %>
+          <% if venue_like.venue.present? %>
+            <a href="/venues/<%= venue_like.venue.id %>">
+              <%= venue_like.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display venue_like.venue_id end -->
 

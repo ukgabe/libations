@@ -70,7 +70,11 @@
       </dt>
       <!-- Display venue_id start -->
       <dd>
-        <%= @cocktail.venue_id %>
+        <% if @cocktail.venue.present? %>
+          <a href="/venues/<%= @cocktail.venue_id %>">
+            <%= @cocktail.venue.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display venue_id end -->
 

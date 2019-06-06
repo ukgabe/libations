@@ -34,7 +34,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @photo_comment.author_id %>
+        <% if @photo_comment.author.present? %>
+          <a href="/users/<%= @photo_comment.author_id %>">
+            <%= @photo_comment.author.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display photo_id start -->
       <dd>
-        <%= @photo_comment.photo_id %>
+        <% if @photo_comment.photo.present? %>
+          <a href="/cocktail_photos/<%= @photo_comment.photo_id %>">
+            <%= @photo_comment.photo.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display photo_id end -->
 
