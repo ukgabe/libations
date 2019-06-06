@@ -1,4 +1,6 @@
 ActiveAdmin.register CocktailPhoto do
+
+ permit_params :image, :caption, :owner_id, :cocktail_id, :comment_count, :likes_count
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
