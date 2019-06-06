@@ -1,6 +1,9 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  has_many   :venue_likes,
+             :dependent => :destroy
+
   has_many   :venue_comments,
              :dependent => :destroy
 
