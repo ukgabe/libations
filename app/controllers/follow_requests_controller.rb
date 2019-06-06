@@ -41,9 +41,7 @@ class FollowRequestsController < ApplicationController
 
   def update_row
     @follow_request = FollowRequest.find(params.fetch("id_to_modify"))
-
-    @follow_request.recipient_id = params.fetch("recipient_id")
-    @follow_request.sender_id = params.fetch("sender_id")
+    
     @follow_request.status = params.fetch("status")
 
     if @follow_request.valid?
